@@ -20,7 +20,7 @@ This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) 
         </execution>
     </executions>
 </plugin>
-``` xml
+```
 
 2. **Copy** webapp directory from standard directory *src/main/webapp* to *target/classes*
 
@@ -48,4 +48,27 @@ This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) 
         </execution>
     </executions>
 </plugin>
+```
+
+## Usage
+
 ``` xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>de.bischinger</groupId>
+            <artifactId>kumuluzee-maven-plugin</artifactId>
+            <version>1.0</version>
+            <executions>
+                <execution>
+                   <id>copy-resources</id>
+                   <phase>package</phase>
+                   <goals>
+                    <goal>copy-dependencies</goal>
+                   </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+```
