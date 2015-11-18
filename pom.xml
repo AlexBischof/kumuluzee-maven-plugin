@@ -6,7 +6,7 @@
 
     <groupId>de.bischinger</groupId>
     <artifactId>kumuluzee-maven-plugin</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>maven-plugin</packaging>
 
     <properties>
