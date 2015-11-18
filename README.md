@@ -1,8 +1,10 @@
 # kumuluzee-maven-plugin
 
-This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) to combine the following packaging tasks:
+This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) with the following to goals:
 
-1. Explicit usage of **maven-dependency-plugin** to copy all dependencies into default output directory which is
+### Goal: copy-dependencies
+
+Explicit usage of **maven-dependency-plugin** to copy all dependencies into default output directory which is
 *target/dependency*. Looking at the following snippet 
 
 ``` xml
@@ -22,7 +24,7 @@ This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) 
 </plugin>
 ```
 
-2. **Copy** webapp directory from standard directory *src/main/webapp* to *target/classes*
+**Copy** webapp directory from standard directory *src/main/webapp* to *target/classes*
 
 ``` xml
 <plugin>
@@ -49,6 +51,15 @@ This repository provides a maven-plugin for [KumuluzEE](https://ee.kumuluz.com) 
     </executions>
 </plugin>
 ```
+
+## Goal: run
+
+In order to have a short cut to the following bash command now **mvn kumuluzee:run** can be used.
+
+```
+java -cp target/classes:target/dependency/* com.kumuluz.ee.EeApplication
+```
+
 
 ## Usage
 
