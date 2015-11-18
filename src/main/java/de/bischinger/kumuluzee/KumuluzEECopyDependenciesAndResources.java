@@ -18,6 +18,7 @@ import org.apache.maven.plugin.BuildPluginManager;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Component;
 import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 import static org.apache.maven.plugins.annotations.LifecyclePhase.PACKAGE;
@@ -30,15 +31,15 @@ import static org.twdata.maven.mojoexecutor.MojoExecutor.*;
  *     <li>copying dependencies to target/dependency</li>
  *     <li>copying src/main/webapp to target/classes/webapp</li>
  *</ul>
- * 
+ *
  * @author Alexander Bischof
  */
 @Mojo(name = "copy-dependencies", defaultPhase = PACKAGE, requiresDependencyResolution = COMPILE)
 public class KumuluzEECopyDependenciesAndResources extends AbstractMojo {
-    @Component
+    @Parameter( defaultValue = "${project}", readonly = true )
     private MavenProject mavenProject;
 
-    @Component
+    @Parameter( defaultValue = "${session}", readonly = true )
     private MavenSession mavenSession;
 
     @Component
